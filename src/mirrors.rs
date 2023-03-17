@@ -150,6 +150,7 @@ impl MirroringManager {
             .iter()
             .all(|sender| sender.capacity() == 0 || sender.is_closed())
         {
+            warn!("Failed to send bytes to a mirrors, no channels are available");
             return;
         }
         let immutable_bytes = bytes.clone().freeze();
