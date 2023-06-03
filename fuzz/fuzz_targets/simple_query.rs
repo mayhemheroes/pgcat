@@ -8,7 +8,6 @@ fn main() {
         fuzz!(|data: &[u8]| {
             // Convert the input to a string
             if let Ok(query) = std::str::from_utf8(data) {
-                // Call the simple_query function with the fuzzed input
                 let _ = simple_query(query);
                 
 
