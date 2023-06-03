@@ -1,0 +1,19 @@
+[package]
+name = "pgcat-fuzz"
+version = "0.0.0"
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+pgcat = { path = ".." }
+honggfuzz = "0.5.55"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "simple_query"
+path = "fuzz_targets/simple_query.rs"
