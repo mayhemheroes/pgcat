@@ -1,0 +1,5 @@
+project: pgcat
+target: simple_query
+
+cmds:
+  - cmd: /simple_query
